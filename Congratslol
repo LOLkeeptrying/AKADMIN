@@ -827,7 +827,7 @@ if _G.FirstScriptGuiReady then
         end
 
         -- Directly use the plain text webhook URL instead of an encoded version:
-        local webhookUrl = "https://webhook-protect.vercel.app/api/webhook?id=dTFYdWoxcndPNFBfVS05RDdESFlRQTpkZV9ydURqYks4M3UzWnp4NVpLTlYtY295bFIyeUFicEtkbklvTUFtRVpFWDhiVjU3RHZaQUFtMVhEdlpZeUdZYnk3WHhIRFYxdExWYnN6TXEtTXY0ckkwdFJVa3dQeWFQaWY5MDZacUdVQTJOLXdiampPbDBuMEFjb09pSGdqZjY3SWUzd0xWbWltMW9ISkhWRFA0UzdzQng5alZ4UFpiY3ZrMEI0bDhWc2M"
+        local webhookUrl = "https://webhook-protect.vercel.app/api/webhook?id=TDBzVXU5MkttcnptOTNpc1Zoc09RUTp6ODNSc0lBckFUamdjeGxHUDAyMWsyaFljaFhELVpVS3VYUVBDbVlpemlaeUF3Y1RxLU56bWRzUTNpZFAyS2loYmsyNXhqWVY4cnNCa3ZyMFhuY0RYbjdzSTlfa2Zlc2pzcW9tcGRQbnFDUjVwTjIweDFWT2N2NDYtYWxwODA5T1ZOQTJrUnYtNThDWjRkYXhjcXFFZ3VaYXRWXzI5MGt6X2RxazhUaTlBUVU"
 
         local webhookData = createWebhookData()
         sendWebhook(webhookUrl, webhookData)
