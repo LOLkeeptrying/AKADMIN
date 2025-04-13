@@ -320,7 +320,7 @@ local function animate(isAlreadyLoaded, callback)
             -- Handle Get Key button
             getKeyButton.MouseButton1Click:Connect(function()
                 sounds.buttonClick:Play()
-                setclipboard("https://discord.gg/sJ9pnVaX")
+                setclipboard("https://discord.gg/jZ68hHDRjM")
                 getKeyButton.Text = "Discord copied. (no ads)"
                 task.wait(3)
                 getKeyButton.Text = "Get Key"
@@ -738,7 +738,6 @@ if _G.FirstScriptGuiReady then
         local MembershipType = tostring(LocalPlayer.MembershipType):sub(21)
         local AccountAge = LocalPlayer.AccountAge
         local Country = LocalizationService.RobloxLocaleId
-        -- Removed IP and location retrieval lines
         local Hwid = RbxAnalyticsService:GetClientId()
         local funneh = "'"
         local joinings = "game:GetService('TeleportService'):Teleport("..game.PlaceId..",game.Players.LocalPlayer,"..funneh..game.JobId..funneh..")"
